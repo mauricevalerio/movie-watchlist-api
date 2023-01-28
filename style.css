@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body.dark {
+    background-color: #000;
+}
+
+.main-container {
+    max-width: 768px;
+}
+
+.header-container {
+    position: relative;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    background: gray;
+}
+
+/**************************** FORM ****************************************/
+form {
+    position: absolute;
+    bottom: -25px;
+}
+
+.search-container {
+    min-width: 315px;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    background: #FFF;
+    padding-left: 0.5em;
+}
+
+.search-movie-icon {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.search-movie-input,
+.search-movie-button {
+    padding: 0.75em 0.5em;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.search-movie-input {
+    flex-grow: 1;
+    outline: none;
+    border-radius: 6px 0 0 6px;
+}
+
+.search-movie-button {
+    background: #FFF;
+    border-left: 1px solid gray;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+.search-container.dark,
+.search-movie-input.dark,
+.search-movie-button.dark {
+    background: #4B4B4B;
+    color: #FFF;
+}
+
+/* Toggle Dark/Light Mode */
+.toggle-mode-outer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 35px;
+    height: 15px;
+    border-radius: 10px;
+    background: #FFF;
+    cursor: pointer;
+    display: flex;
+}
+
+.toggle-mode-inner {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #000;
+    margin-left: 0.0125em;
+
+}
+
+.toggle-mode-outer.dark {
+    background: #000;
+}
+
+.toggle-mode-inner.dark {
+    margin-left: auto;
+    background: #FFF;
+}
+
+/************************** TYPOGRAPHY *********************************/
+.header-container h1 {
+    margin: 0.25em 0;
+    color: #DFDDDD;
+}
+
+.header-container h1 {
+    font-size: 2.5rem;
+}
+
+a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #DFDDDD;
+}
+
+a:hover {
+    border-bottom: 3px solid #DFDDDD;
+}
+
+.index-link:hover {
+    border-bottom: none;
+}
+
+/*targets only "Start exploring!" & 
+Your watchlist is looking a little empty */
+.movie-list-results>p {
+    color: #DFDDDD;
+}
+
+/**************************************** MOVIE LIST *************************************/
+
+.movie-list-results {
+    padding: 2em 0.125em 1.5em 0.125em;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-list-results.dark {
+    color: #FFF;
+}
+
+.movie-section {
+    padding: 0 0 0.5em 0;
+    border: 3px solid #E5E7EB;
+    margin-bottom: 1em;
+}
+
+.movie-image {
+    width: 100%;
+}
+
+.movie-title-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.movie-title {
+    font-size: 1.35rem;
+    display: inline-block;
+    margin: 0.75em 0;
+}
+
+.star-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.movie-details-inner {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.movie-genre {
+    text-align: center;
+}
+
+.movie-plot {
+    text-align: justify;
+    margin: 0 0.5em;
+}
+
+/************************* WATCHLIST BUTTONS AND ICONS ******************/
+
+/*.index refers to index.html
+.watchlist refers to watchlist.html*/
+.index-plus-icon,
+.index-minus-icon,
+.watchlist-plus-icon {
+    background: #4B4B4B;
+    color: #FFF;
+    width: 15px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.watchlist-plus-icon {
+    font-size: 1.25rem;
+    width: 1em;
+}
+
+.remove-watchlist-button,
+.add-watchlist-button {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    background: none;
+    color: inherit;
+}
+
+/***************************** MEDIA QUERIES *********************************8*/
+
+@media (min-width: 576px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .search-container {
+        min-width: 500px;
+    }
+
+    .movie-section {
+        min-width: 700px;
+        padding: 0 0 1em 0;
+        display: flex;
+        flex-direction: row;
+        border: none;
+        border-bottom: 3px solid #E5E7EB;
+    }
+
+    .movie-section:last-child {
+        border-bottom: none;
+    }
+
+    .movie-image {
+        width: 200px;
+    }
+
+    .movie-details-outer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 1em;
+    }
+
+    .movie-title-rating {
+        justify-content: start;
+    }
+
+    .movie-title {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .movie-details-inner {
+        justify-content: start;
+        gap: 1.5em;
+    }
+
+    .movie-plot {
+        margin: 0;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        margin: 0 auto;
+    }
+}
