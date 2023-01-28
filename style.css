@@ -132,7 +132,7 @@ a:hover {
     border-bottom: 3px solid #DFDDDD;
 }
 
-.index-link:hover {
+.movie-list-results>.index-link:hover {
     border-bottom: none;
 }
 
