@@ -1,7 +1,7 @@
 function getOmdbUrl(rawSearchFormData) {
     const searchFormData = new FormData(rawSearchFormData)
 
-    let baseUrl = new URL('http://www.omdbapi.com/')
+    let baseUrl = new URL('https://www.omdbapi.com/')
     baseUrl.searchParams.append('apiKey', '1a9d8ea6')
     baseUrl.searchParams.append('s', searchFormData.get('s'))
 
@@ -9,7 +9,7 @@ function getOmdbUrl(rawSearchFormData) {
 }
 
 function getOmdbMovieDetailsUrl(imdbId) {
-    let baseUrl = new URL('http://www.omdbapi.com/')
+    let baseUrl = new URL('https://www.omdbapi.com/')
     baseUrl.searchParams.append('apiKey', '1a9d8ea6')
     baseUrl.searchParams.append('i', imdbId)
 
